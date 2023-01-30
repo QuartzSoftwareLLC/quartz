@@ -10,6 +10,7 @@ get_save_location <- \(x) x |> sprintf(fmt = "data/%s.fst")
 qload <- \(x)   x |>
     get_save_location() |>
     fst::read_fst() |>
+    tibble::as_tibble() |>
     assign(x = x, envir = .GlobalEnv)
 
 
