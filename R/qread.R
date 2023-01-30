@@ -10,7 +10,7 @@ get_save_location <- \(x) x |> sprintf(fmt = "data/%s.fst")
 qload <- \(x)   x |>
     get_save_location() |>
     fst::read_fst() |>
-    assign(x = x)
+    assign(x = x, envir = .GlobalEnv)
 
 
 #' Quartz Save

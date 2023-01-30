@@ -5,7 +5,7 @@
 \title{Quartz Save
 Writes the data frame to the data directory using fst.}
 \usage{
-qsave(x, name = deparse(substitute(x)))
+qsave(x, name = as.character(substitute(x)))
 }
 \arguments{
 \item{x}{The object to write}
