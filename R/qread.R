@@ -8,8 +8,8 @@ get_save_location <- \(x) x |> sprintf(fmt = "data/%s.fst")
 qload <- \(...)   alist(...) |> 
     substitute() |> 
     eval() |> 
-    map_chr(as.character) |> 
-    map(~ .x |> 
+    purrr::map_chr(as.character) |> 
+    purrr::map(~ .x |> 
         get_save_location() |>
         fst::read_fst() |>
         tibble::as_tibble() |>
