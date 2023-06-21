@@ -13,7 +13,7 @@ qload <- \(...)   alist(...) |>
         get_save_location() |>
         fst::read_fst() |>
         tibble::as_tibble() |>
-        assign(x = .x, envir = .GlobalEnv))
+        assign(x = .x, envir = .GlobalEnv)) -> dev
 
 
 #' Quartz Read
