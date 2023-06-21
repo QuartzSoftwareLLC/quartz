@@ -6,5 +6,5 @@ load_all <- function() {
     devtools::load_all()
     Sys.glob("data/*.fst") |>
         stringr::str_extract(pattern = "data/(.*).fst", group = 1) |>
-        map(qload)
+        purrr::map(qload) -> dev
 }
