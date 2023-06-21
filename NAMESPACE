@@ -3,4 +3,5 @@
 export(install)
 export(load_all)
 export(qload)
+export(qread)
 export(qsave)
