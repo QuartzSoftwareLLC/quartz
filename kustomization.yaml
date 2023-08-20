@@ -1,0 +1,27 @@
+resources:
+- https://github.com/quartzsoftwarellc/kustomize.git/nginx
+
+namePrefix: quartz-
+
+commonLabels:
+  app: quartz
+
+patches:
+- patch: |-
+    - op: add
+      path: /spec/rules/0/host
+      value: quartz.quartzsoftware.com
+    - op: add
+      path: /spec/tls/0
+      value:
+        hosts:
+        - quartz.quartzsoftware.com
+        secretName: quartz-ingress-tls
+  target:
+    kind: Ingress
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+- name: app
+  newName: localhost:32000/quartz-docs
+  newTag: dc559ae82a5a8316cc847c2f68474ea9fad533d5
