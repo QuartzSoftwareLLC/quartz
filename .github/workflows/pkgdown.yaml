@@ -1,0 +1,13 @@
+# .github/workflows/publish.yml
+name: Call Pkgdown
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  call-pgkdown:
+    uses: quartzsoftwarellc/.github/.github/workflows/pkgdown.yaml@main
+    with:
+      subdomain: quartz
